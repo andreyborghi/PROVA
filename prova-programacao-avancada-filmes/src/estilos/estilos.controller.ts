@@ -1,13 +1,5 @@
 import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  ParseIntPipe,
-  Patch,
-  Post,
-  Query,
+  Body, Controller, Delete, Get, Param, ParseIntPipe, Patch, Post, Query,
 } from '@nestjs/common';
 import { CreateEstiloDto } from './dto/create-estilo.dto';
 import { UpdateEstiloDto } from './dto/update-estilo.dto';
@@ -17,6 +9,7 @@ import { EstilosService } from './estilos.service';
 export class EstilosController {
   constructor(private readonly estilosService: EstilosService) {}
 
+  //Aqui é o 1 Create: inserção dos novos registros
   @Post()
   create(@Body() data: CreateEstiloDto) {
     return this.estilosService.create(data);
